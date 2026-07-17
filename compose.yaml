@@ -1,0 +1,28 @@
+services:
+  knowledge-nebula:
+    build:
+      context: .
+    image: knowledge-nebula:local
+    container_name: knowledge-nebula
+    init: true
+    restart: unless-stopped
+    ports:
+      - "${KNOWLEDGE_NEBULA_PORT:-8765}:8765"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8765
+      SCAN_INTERVAL_MS: "${SCAN_INTERVAL_MS:-1200}"
+      KNOWLEDGE_ROOT: /knowledge
+      KNOWLEDGE_CONFIG_PATH: /config/config.json
+    volumes:
+      - type: bind
+        source: ${KNOWLEDGE_DIR:-./knowledge}
+        target: /knowledge
+      - type: volume
+        source: knowledge-nebula-config
+        target: /config
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  knowledge-nebula-config:

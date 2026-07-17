@@ -9,3 +9,6 @@ vite.config.d.ts
 .vscode
 .knowledge-nebula-config.json
 .knowledge-nebula/
+.env
+knowledge/*
+!knowledge/.gitkeep

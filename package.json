@@ -1,7 +1,10 @@
 {
   "name": "knowledge-nebula",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.2.0",
+  "description": "Local-first, self-hosted knowledge base browser with search, rich previews, secure editing and live sync.",
+  "repository": "https://github.com/YXX168/Knowledge-Nebula.git",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
