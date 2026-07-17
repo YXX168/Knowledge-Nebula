@@ -8,17 +8,16 @@ interface Props {
   onSelect: (node: KnowledgeNode) => void
 }
 
-const fileIcon = (extension = '') => {
-  if (['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'].includes(extension)) return FileImage
-  if (extension === 'json') return FileJson
-  if (['js', 'jsx', 'ts', 'tsx', 'py', 'java', 'go', 'rs', 'css', 'html'].includes(extension)) return FileCode2
-  return FileText
+function FileGlyph({ extension = '' }: { extension?: string }) {
+  if (['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'].includes(extension)) return <FileImage size={16} className="tree-icon" />
+  if (extension === 'json') return <FileJson size={16} className="tree-icon" />
+  if (['js', 'jsx', 'ts', 'tsx', 'py', 'java', 'go', 'rs', 'css', 'html'].includes(extension)) return <FileCode2 size={16} className="tree-icon" />
+  return <FileText size={16} className="tree-icon" />
 }
 
 function TreeNode({ node, depth, selectedId, onSelect }: { node: KnowledgeNode; depth: number; selectedId?: string; onSelect: (node: KnowledgeNode) => void }) {
   const [open, setOpen] = useState(depth < 2)
   const isFolder = node.kind === 'folder'
-  const Icon = isFolder ? (open ? FolderOpen : Folder) : fileIcon(node.extension)
   return (
     <div className="tree-branch">
       <button
@@ -28,7 +27,9 @@ function TreeNode({ node, depth, selectedId, onSelect }: { node: KnowledgeNode; 
         title={node.path}
       >
         {isFolder ? <ChevronRight className={`tree-chevron ${open ? 'open' : ''}`} size={14} /> : <span className="tree-spacer" />}
-        <Icon size={16} className={`tree-icon ${isFolder ? 'folder' : ''}`} />
+        {isFolder
+          ? open ? <FolderOpen size={16} className="tree-icon folder" /> : <Folder size={16} className="tree-icon folder" />
+          : <FileGlyph extension={node.extension} />}
         <span className="tree-name">{node.name}</span>
         {isFolder && <span className="tree-count">{node.children?.length ?? 0}</span>}
       </button>

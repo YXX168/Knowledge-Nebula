@@ -11,10 +11,17 @@ export interface KnowledgeNode {
   children?: KnowledgeNode[]
   file?: File
   demoContent?: string
+  sourceUrl?: string
 }
 
 export interface SearchHit {
   node: KnowledgeNode
   excerpt: string
   score: number
+}
+
+export interface KnowledgeConfig {
+  knowledgeRoot: string
+  configured: boolean
+  available: boolean
 }

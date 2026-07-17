@@ -1,26 +1,27 @@
 {
   "name": "knowledge-nebula",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "start": "node server.mjs",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "node --test"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
     "dompurify": "latest",
     "lucide-react": "latest",
     "marked": "latest",
-    "vite": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "vite": "latest"
   },
   "devDependencies": {
     "@eslint/js": "latest",
-    "@types/dompurify": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "eslint": "latest",
