@@ -2,10 +2,20 @@
   "name": "knowledge-nebula",
   "private": true,
   "version": "1.2.0",
-  "description": "Local-first, self-hosted knowledge base browser with search, rich previews, secure editing and live sync.",
+  "description": "本地优先、自托管的知识库工作台，支持全文搜索、多格式预览、安全编辑与实时同步。",
+  "keywords": [
+    "knowledge-base",
+    "local-first",
+    "self-hosted",
+    "full-text-search",
+    "react"
+  ],
   "repository": "https://github.com/YXX168/Knowledge-Nebula.git",
   "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -15,23 +25,23 @@
     "test": "node --test"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "dompurify": "latest",
-    "lucide-react": "latest",
-    "marked": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "vite": "latest"
+    "@vitejs/plugin-react": "^6.0.3",
+    "dompurify": "^3.4.12",
+    "lucide-react": "^1.24.0",
+    "marked": "^18.0.6",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "vite": "^8.1.5"
   },
   "devDependencies": {
-    "@eslint/js": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "eslint": "latest",
-    "eslint-plugin-react-hooks": "latest",
-    "eslint-plugin-react-refresh": "latest",
-    "globals": "latest",
-    "typescript": "latest",
-    "typescript-eslint": "latest"
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^10.7.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.64.0"
   }
 }

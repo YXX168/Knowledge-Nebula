@@ -177,7 +177,7 @@ function App() {
       <div className="ambient ambient-one" /><div className="ambient ambient-two" /><div className="noise" />
       <header className="topbar glass-panel">
         <button className="mobile-menu" onClick={() => setSidebarOpen((value) => !value)} aria-label="切换侧边栏"><Menu size={19} /></button>
-        <div className="brand"><div className="brand-mark"><Sparkles size={18} /></div><div><strong>Knowledge Nebula</strong><span>本地知识星云</span></div></div>
+        <div className="brand"><div className="brand-mark"><Sparkles size={18} /></div><div><strong>知识星云</strong><span>KNOWLEDGE NEBULA</span></div></div>
         <div className="global-search">
           <Search size={17} />
           <input ref={searchRef} value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索文件名、路径与正文内容…" />
