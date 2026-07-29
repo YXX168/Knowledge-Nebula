@@ -1,6 +1,7 @@
 import { BookOpen, Code2, Command, Files, FolderCog, Library, Menu, RefreshCw, Search, Settings, ShieldCheck, Sparkles, Star, X } from 'lucide-react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { FileTree } from './components/FileTree'
+import { LiquidBackdrop } from './components/LiquidBackdrop'
 import { Preview } from './components/Preview'
 import { demoTree, findNodeByPath, flattenFiles, loadKnowledge, loadKnowledgeConfig, saveKnowledgeConfig, searchKnowledge } from './lib/knowledge'
 import type { KnowledgeConfig, KnowledgeNode, SearchHit } from './types'
@@ -174,6 +175,7 @@ function App() {
 
   return (
     <main className="app-shell">
+      <LiquidBackdrop />
       <div className="ambient ambient-one" /><div className="ambient ambient-two" /><div className="noise" />
       <header className="topbar glass-panel">
         <button className="mobile-menu" onClick={() => setSidebarOpen((value) => !value)} aria-label="切换侧边栏"><Menu size={19} /></button>
