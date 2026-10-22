@@ -7,7 +7,7 @@ services:
     init: true
     restart: unless-stopped
     ports:
-      - "${KNOWLEDGE_NEBULA_PORT:-8765}:8765"
+      - "${KNOWLEDGE_NEBULA_BIND:-127.0.0.1}:${KNOWLEDGE_NEBULA_PORT:-8765}:8765"
     environment:
       HOST: 0.0.0.0
       PORT: 8765

@@ -2,7 +2,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-command -v node >/dev/null || { echo "错误：未安装 Node.js 20 或更高版本" >&2; exit 1; }
+command -v node >/dev/null || { echo "错误：未安装 Node.js 22.13 或更高版本（推荐 24 LTS）" >&2; exit 1; }
 command -v npm >/dev/null || { echo "错误：未安装 npm" >&2; exit 1; }
 
 [ -d node_modules ] || npm ci
